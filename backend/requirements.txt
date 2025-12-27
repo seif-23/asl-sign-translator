@@ -1,0 +1,19 @@
+# Core DL
+# torch
+# torchvision
+
+# Video / Image processing
+opencv-python
+Pillow
+
+# FastAPI backend
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+
+# Utilities
+numpy
+pandas
+scikit-learn
+tqdm

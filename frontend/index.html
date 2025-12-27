@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ASL Sign Recognizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <span class="logo-mark">ASL</span>
+        <span class="logo-text">Vision</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#who-we-are">Who are we</a>
+        <!-- تقدر تضيف صفحات تانية بعدين -->
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content slide-up">
+        <h1 class="hero-title">
+          Turn <span class="gradient-text">ASL videos</span> into words.
+        </h1>
+        <p class="hero-subtitle">
+          Upload a short ASL clip and let our model recognize the sign in real time.
+        </p>
+
+        <div class="status-pill" id="backend-status-pill">
+          Backend status:
+          <span id="backend-status">Checking...</span>
+        </div>
+      </div>
+
+      <!-- Upload Card -->
+      <div class="card upload-card fade-in">
+        <div class="card-header">
+          <h2>Upload your ASL video</h2>
+          <p>MP4 / WebM • short clips work best</p>
+        </div>
+
+        <div
+          class="drop-zone"
+          id="drop-zone"
+        >
+          <div class="drop-icon">⬆</div>
+          <p class="drop-title">Drag & drop your video here</p>
+          <p class="drop-subtitle">or click to browse</p>
+          <input
+            type="file"
+            id="video-input"
+            accept="video/*"
+            hidden
+          />
+        </div>
+
+        <div class="file-info" id="file-info">
+          No file selected yet.
+        </div>
+
+        <div class="actions">
+          <button id="predict-btn" class="btn-primary" disabled>
+            Upload & Predict
+          </button>
+          <button id="clear-btn" class="btn-ghost">
+            Clear
+          </button>
+        </div>
+
+        <div class="loader" id="loader">
+          <div class="spinner"></div>
+          <span>Analyzing your video...</span>
+        </div>
+
+        <div class="result" id="result"></div>
+
+        <video
+          id="video-preview"
+          class="video-preview"
+          controls
+        ></video>
+      </div>
+      <div class="camera-box">
+  <video id="cam" autoplay playsinline muted style="width:100%; max-width:720px; border-radius:12px; background:#000;"></video>
+
+  <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+    <button id="cam-start">Start Camera</button>
+    <button id="rec-start" disabled>Start Predict (Record)</button>
+    <button id="rec-stop" disabled>Stop</button>
+  </div>
+
+  <div id="cam-status" style="margin-top:8px; opacity:.85;">Camera: idle</div>
+</div>
+
+    </section>
+
+    <!-- Who are we Section (تقدر تعدله على مزاجك) -->
+    <section id="who-we-are" class="who-we-are">
+      <div class="section-header">
+        <h2>Who are we?</h2>
+        <p>
+          A small, curious team building tools that make sign language more accessible.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Card 1 -->
+        <div class="team-card">
+          <div class="avatar-circle">A</div>
+          <h3>Lead ML Engineer</h3>
+          <p>
+            Builds and trains the ASL recognition models, plays with PyTorch all day.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="team-card">
+          <div class="avatar-circle">B</div>
+          <h3>Frontend Wizard</h3>
+          <p>
+            Turns raw APIs into smooth interfaces, loves animations and micro-interactions.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="team-card">
+          <div class="avatar-circle">C</div>
+          <h3>Product & UX</h3>
+          <p>
+            Makes sure the experience feels simple, fast, and friendly for real users.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>ASL Vision • Built with ❤️ and a lot of coffee.</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+# Core DL
+torch
+torchvision
+
+# Video / Image processing
+opencv-python
+Pillow
+
+
+
+# Utilities
+numpy
+pandas
+scikit-learn
+tqdm
