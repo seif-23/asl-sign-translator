@@ -12,14 +12,14 @@ from train_gpu_ready import ClipFramesDataset, DATA_ROOT, IMG_SIZE
 CKPT_IN  = Path("models/asl_best_gpu.pth")
 CKPT_OUT = Path("models/asl_finetuned_nomix_best.pth")
 
-FRAMES_PER_CLIP = 8          # لازم نفس اللي اتدرّبت عليه
-BATCH_SIZE = 16              # لو OOM خليها 8
+FRAMES_PER_CLIP = 8         
+BATCH_SIZE = 16              
 EPOCHS = 12
-LR = 7e-5                    # أقل من قبل
-WEIGHT_DECAY = 2e-4          # أعلى شوية ضد overfit
-NUM_WORKERS = 0              # Windows safe
+LR = 7e-5                 
+WEIGHT_DECAY = 2e-4         
+NUM_WORKERS = 0            
 
-LABEL_SMOOTHING = 0.05       # قللها شوية
+LABEL_SMOOTHING = 0.05       
 EARLY_STOP_PATIENCE = 4
 LOG_EVERY = 20
 
@@ -47,9 +47,9 @@ class SimpleTemporalResNetDrop(nn.Module):
     def forward(self, x):
         b, t, c, h, w = x.shape
         x = x.view(b * t, c, h, w)
-        f = self.backbone(x)               # [B*T, 512, 1, 1]
-        f = f.view(b, t, self.feat_dim)    # [B, T, 512]
-        f = f.mean(dim=1)                  # [B, 512]
+        f = self.backbone(x)               
+        f = f.view(b, t, self.feat_dim)    
+        f = f.mean(dim=1)                  
         f = self.drop(f)
         return self.classifier(f)
 
@@ -78,7 +78,7 @@ def main():
     if device.type == "cuda":
         print("[INFO] GPU:", torch.cuda.get_device_name(0))
 
-    # ✅ Aug قوي (بدون MixUp)
+   
     train_tf = transforms.Compose([
         transforms.Resize((IMG_SIZE + 16, IMG_SIZE + 16)),
         transforms.RandomResizedCrop(IMG_SIZE, scale=(0.65, 1.0)),
@@ -101,12 +101,11 @@ def main():
 
     model = SimpleTemporalResNetDrop(num_classes=num_classes, pretrained=False, dropout=0.35).to(device)
 
-    # حمل أوزان الموديل الأساسي (نفس الأسماء تقريبًا)
-    # هنحمّل backbone + classifier لو مطابقين
+    
     missing, unexpected = model.load_state_dict(ckpt["model_state_dict"], strict=False)
     print("[LOAD] missing:", len(missing), "unexpected:", len(unexpected))
 
-    # افتح الـ backbone للتعلم (fine-tune)
+   
     for p in model.backbone.parameters():
         p.requires_grad = True
 
