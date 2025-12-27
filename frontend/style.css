@@ -445,3 +445,161 @@ body {
     gap: 14px;
   }
 }
+/* ===== Make UI feel more "real" (overrides) ===== */
+:root {
+  --panel: rgba(15, 23, 42, 0.86);
+  --panel-strong: rgba(15, 23, 42, 0.94);
+  --border: rgba(148, 163, 184, 0.55);
+  --muted: #9ca3af;
+}
+
+body {
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(56, 189, 248, 0.16), transparent 55%),
+              radial-gradient(900px 500px at 95% 15%, rgba(168, 85, 247, 0.14), transparent 55%),
+              radial-gradient(circle at top, #1f2937 0, #020617 52%, #000 100%);
+}
+
+/* Navbar: more product-like */
+.navbar {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* Hero spacing + subtle divider */
+.hero {
+  position: relative;
+  padding-bottom: 22px;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.25), transparent);
+}
+
+/* Card: less "AI template", more clean */
+.card {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.92), rgba(2, 6, 23, 0.92));
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.55);
+}
+
+/* Drop zone: real app feel */
+.drop-zone {
+  background: rgba(2, 6, 23, 0.35);
+  border: 1.4px dashed rgba(148, 163, 184, 0.7);
+}
+.drop-zone:hover {
+  border-color: rgba(56, 189, 248, 0.95);
+}
+
+/* Result area: make it look like a response card */
+.result {
+  background: rgba(2, 6, 23, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+/* Video preview: look embedded */
+.video-preview {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Status pill: tiny indicator dot */
+.status-pill {
+  position: relative;
+  padding-left: 12px;
+}
+.status-pill::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.7);
+  display: inline-block;
+  margin-right: 8px;
+}
+.status-pill.online::before {
+  background: #22c55e;
+}
+
+/* If your JS toggles .online on pill, keep it. If not, still fine. */
+#backend-status-pill.online::before {
+  background: #22c55e;
+}
+
+
+
+
+/* ===== Team: more realistic profiles ===== */
+.who-we-are {
+  padding-top: 10px;
+}
+
+.section-header h2 {
+  letter-spacing: 0.2px;
+}
+
+.team-grid {
+  gap: 14px;
+}
+
+/* Turn cards into profile rows */
+.team-card {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 10px;
+  align-items: center;
+  background: rgba(2, 6, 23, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.team-card:hover {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.4);
+}
+
+/* Avatar small and clean */
+.avatar-circle {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Meta: name + role */
+.team-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.team-card h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+.team-role {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* Tags */
+.tag-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: -2px;
+}
+.tag {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  color: #e5e7eb;
+}

@@ -22,7 +22,7 @@
       <nav class="nav-links">
         <a href="#hero">Home</a>
         <a href="#who-we-are">Who are we</a>
-        <!-- تقدر تضيف صفحات تانية بعدين -->
+       
       </nav>
     </header>
 
@@ -90,58 +90,85 @@
           controls
         ></video>
       </div>
-      <div class="camera-box">
-  <video id="cam" autoplay playsinline muted style="width:100%; max-width:720px; border-radius:12px; background:#000;"></video>
+     
 
-  <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-    <button id="cam-start">Start Camera</button>
-    <button id="rec-start" disabled>Start Predict (Record)</button>
-    <button id="rec-stop" disabled>Stop</button>
+    </section>
+<section id="who-we-are" class="who-we-are">
+  <div class="section-header">
+    <h2>Meet the team</h2>
+    <p>
+      We’re a student team building an end-to-end ASL recognition demo: data → training → API → UI.
+    </p>
   </div>
 
-  <div id="cam-status" style="margin-top:8px; opacity:.85;">Camera: idle</div>
-</div>
-
-    </section>
-
-    <!-- Who are we Section (تقدر تعدله على مزاجك) -->
-    <section id="who-we-are" class="who-we-are">
-      <div class="section-header">
-        <h2>Who are we?</h2>
-        <p>
-          A small, curious team building tools that make sign language more accessible.
-        </p>
+  <div class="team-grid">
+    <article class="team-card">
+      <div class="avatar-circle">S</div>
+      <div class="team-meta">
+        <h3>Seif Magdy</h3>
+        <span class="team-role">GUI • Backend</span>
       </div>
-
-      <div class="team-grid">
-        <!-- Card 1 -->
-        <div class="team-card">
-          <div class="avatar-circle">A</div>
-          <h3>Lead ML Engineer</h3>
-          <p>
-            Builds and trains the ASL recognition models, plays with PyTorch all day.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="team-card">
-          <div class="avatar-circle">B</div>
-          <h3>Frontend Wizard</h3>
-          <p>
-            Turns raw APIs into smooth interfaces, loves animations and micro-interactions.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="team-card">
-          <div class="avatar-circle">C</div>
-          <h3>Product & UX</h3>
-          <p>
-            Makes sure the experience feels simple, fast, and friendly for real users.
-          </p>
-        </div>
+      <div class="tag-row">
+        <span class="tag">Frontend</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Integration</span>
       </div>
-    </section>
+    </article>
+
+    <article class="team-card">
+      <div class="avatar-circle">M</div>
+      <div class="team-meta">
+        <h3>Mohab Shahin</h3>
+        <span class="team-role">Training</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag">PyTorch</span>
+        <span class="tag">Experiments</span>
+        <span class="tag">Metrics</span>
+      </div>
+    </article>
+
+    <article class="team-card">
+      <div class="avatar-circle">M</div>
+      <div class="team-meta">
+        <h3>Mohamed Elmosalamy</h3>
+        <span class="team-role">Data EDA • Collection • Preprocessing • Fine-tuning</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag">EDA</span>
+        <span class="tag">Preprocess</span>
+        <span class="tag">Fine-tune</span>
+      </div>
+    </article>
+
+    <article class="team-card">
+      <div class="avatar-circle">A</div>
+      <div class="team-meta">
+        <h3>Ammar Amged</h3>
+        <span class="team-role">Training • Fine-tuning</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Training</span>
+        <span class="tag">Augment</span>
+        <span class="tag">Tuning</span>
+      </div>
+    </article>
+
+    <article class="team-card">
+      <div class="avatar-circle">M</div>
+      <div class="team-meta">
+        <h3>Mohamed Saed Fayed</h3>
+        <span class="team-role">GUI • Fine-tuning</span>
+      </div>
+      <div class="tag-row">
+        <span class="tag">UI</span>
+        <span class="tag">Polish</span>
+        <span class="tag">Fine-tune</span>
+      </div>
+    </article>
+  </div>
+</section>
+
 
     <footer class="footer">
       <span>ASL Vision • Built with ❤️ and a lot of coffee.</span>
