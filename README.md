@@ -131,10 +131,10 @@ Example response:
 
 ## Team
 
-* **Seif Magdy** — GUI, Backend
-* **Mohab Shahin** — Training
-* **Mohamed Elmosalamy** — Data EDA, Collection, Preprocessing, Fine-tuning
-* **Ammar Amged** — Training, Fine-tuning
+* **Seif Magdy** — GUI, Backend and inference
+* **Mohab Shahin** — Training , inference
+* **Mohamed Elmosalamy** — Data EDA, Collection, Fine-tuning
+* **Ammar Amged** — Training, Fine-tuning,preprocessing
 * **Mohamed Saed Fayed** — GUI, Fine-tuning
 
 ---
@@ -158,3 +158,4 @@ No license specified yet. Add a `LICENSE` file if needed.
 * FastAPI & Uvicorn
 * PyTorch
 * WLASL dataset contributors
+
